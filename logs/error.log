@@ -1,0 +1,160 @@
+[2026-07-17T21:17:53.182Z] ERROR: Failed to start server bad auth : Authentication failed.
+[2026-07-17T21:20:59.995Z] ERROR: Redis error
+[2026-07-17T21:20:59.998Z] ERROR: Redis error
+[2026-07-17T21:21:00.051Z] ERROR: Redis error
+[2026-07-17T21:21:00.155Z] ERROR: Redis error
+[2026-07-17T21:21:00.308Z] ERROR: Redis error
+[2026-07-17T21:21:00.512Z] ERROR: Redis error
+[2026-07-17T21:21:00.765Z] ERROR: Redis error
+[2026-07-17T21:21:01.070Z] ERROR: Redis error
+[2026-07-17T21:21:01.426Z] ERROR: Redis error
+[2026-07-17T21:21:01.831Z] ERROR: Redis error
+[2026-07-17T21:21:02.285Z] ERROR: Redis error
+[2026-07-17T21:21:02.789Z] ERROR: Redis error
+[2026-07-17T21:21:03.292Z] ERROR: Redis error
+[2026-07-17T21:21:03.796Z] ERROR: Redis error
+[2026-07-17T21:21:04.300Z] ERROR: Redis error
+[2026-07-17T21:21:04.803Z] ERROR: Redis error
+[2026-07-17T21:21:05.305Z] ERROR: Redis error
+[2026-07-17T21:21:05.809Z] ERROR: Redis error
+[2026-07-17T21:21:06.313Z] ERROR: Redis error
+[2026-07-17T21:21:06.818Z] ERROR: Redis error
+[2026-07-17T21:21:07.321Z] ERROR: Redis error
+[2026-07-17T21:21:07.825Z] ERROR: Redis error
+[2026-07-17T21:21:08.327Z] ERROR: Redis error
+[2026-07-17T21:21:08.831Z] ERROR: Redis error
+[2026-07-17T21:21:09.334Z] ERROR: Redis error
+[2026-07-17T21:21:09.837Z] ERROR: Redis error
+[2026-07-17T21:21:10.341Z] ERROR: Redis error
+[2026-07-17T21:21:10.845Z] ERROR: Redis error
+[2026-07-17T21:21:11.347Z] ERROR: Redis error
+[2026-07-17T21:21:11.849Z] ERROR: Redis error
+[2026-07-17T21:21:12.351Z] ERROR: Redis error
+[2026-07-17T21:21:12.854Z] ERROR: Redis error
+[2026-07-17T21:21:13.357Z] ERROR: Redis error
+[2026-07-17T21:21:13.859Z] ERROR: Redis error
+[2026-07-17T21:21:14.362Z] ERROR: Redis error
+[2026-07-17T21:21:14.865Z] ERROR: Redis error
+[2026-07-17T21:21:15.368Z] ERROR: Redis error
+[2026-07-17T21:21:15.871Z] ERROR: Redis error
+[2026-07-17T21:21:16.374Z] ERROR: Redis error
+[2026-07-17T21:21:16.876Z] ERROR: Redis error
+[2026-07-17T21:21:17.385Z] ERROR: Redis error
+[2026-07-17T21:21:17.888Z] ERROR: Redis error
+[2026-07-17T21:21:18.391Z] ERROR: Redis error
+[2026-07-17T21:21:18.894Z] ERROR: Redis error
+[2026-07-17T21:21:19.396Z] ERROR: Redis error
+[2026-07-17T21:21:19.900Z] ERROR: Redis error
+[2026-07-17T21:21:20.403Z] ERROR: Redis error
+[2026-07-17T21:21:20.905Z] ERROR: Redis error
+[2026-07-17T21:21:21.410Z] ERROR: Redis error
+[2026-07-17T21:21:21.913Z] ERROR: Redis error
+[2026-07-17T21:21:22.414Z] ERROR: Redis error
+[2026-07-17T21:21:22.917Z] ERROR: Redis error
+[2026-07-17T21:21:23.420Z] ERROR: Redis error
+[2026-07-17T21:21:23.922Z] ERROR: Redis error
+[2026-07-17T21:21:24.425Z] ERROR: Redis error
+[2026-07-17T21:21:24.928Z] ERROR: Redis error
+[2026-07-17T21:21:25.431Z] ERROR: Redis error
+[2026-07-17T21:21:25.935Z] ERROR: Redis error
+[2026-07-17T21:21:26.439Z] ERROR: Redis error
+[2026-07-17T21:21:26.943Z] ERROR: Redis error
+[2026-07-17T21:21:27.445Z] ERROR: Redis error
+[2026-07-17T21:21:27.948Z] ERROR: Redis error
+[2026-07-17T21:21:28.455Z] ERROR: Redis error
+[2026-07-17T21:21:28.958Z] ERROR: Redis error
+[2026-07-17T21:21:29.461Z] ERROR: Redis error
+[2026-07-17T21:21:29.965Z] ERROR: Redis error
+[2026-07-17T21:21:30.468Z] ERROR: Redis error
+[2026-07-17T21:21:30.970Z] ERROR: Redis error
+[2026-07-17T21:21:31.473Z] ERROR: Redis error
+[2026-07-17T21:21:31.976Z] ERROR: Redis error
+[2026-07-17T21:21:32.478Z] ERROR: Redis error
+[2026-07-17T21:21:32.981Z] ERROR: Redis error
+[2026-07-17T21:21:33.484Z] ERROR: Redis error
+[2026-07-17T21:21:33.987Z] ERROR: Redis error
+[2026-07-17T21:21:34.490Z] ERROR: Redis error
+[2026-07-17T21:21:34.993Z] ERROR: Redis error
+[2026-07-17T21:21:35.497Z] ERROR: Redis error
+[2026-07-17T21:21:36.001Z] ERROR: Redis error
+[2026-07-17T21:21:36.505Z] ERROR: Redis error
+[2026-07-17T21:21:37.008Z] ERROR: Redis error
+[2026-07-17T21:21:37.511Z] ERROR: Redis error
+[2026-07-17T21:21:38.014Z] ERROR: Redis error
+[2026-07-17T21:21:38.517Z] ERROR: Redis error
+[2026-07-17T21:21:39.020Z] ERROR: Redis error
+[2026-07-17T21:21:39.523Z] ERROR: Redis error
+[2026-07-17T21:21:40.028Z] ERROR: Redis error
+[2026-07-17T21:21:40.531Z] ERROR: Redis error
+[2026-07-17T21:21:41.034Z] ERROR: Redis error
+[2026-07-17T21:21:41.536Z] ERROR: Redis error
+[2026-07-17T21:21:42.038Z] ERROR: Redis error
+[2026-07-17T21:21:42.542Z] ERROR: Redis error
+[2026-07-17T21:21:43.045Z] ERROR: Redis error
+[2026-07-17T21:21:43.547Z] ERROR: Redis error
+[2026-07-17T21:21:44.050Z] ERROR: Redis error
+[2026-07-17T21:21:44.553Z] ERROR: Redis error
+[2026-07-17T21:21:45.057Z] ERROR: Redis error
+[2026-07-17T21:21:45.560Z] ERROR: Redis error
+[2026-07-17T21:21:46.064Z] ERROR: Redis error
+[2026-07-17T21:21:46.566Z] ERROR: Redis error
+[2026-07-17T21:21:47.068Z] ERROR: Redis error
+[2026-07-17T21:21:47.572Z] ERROR: Redis error
+[2026-07-17T21:21:48.075Z] ERROR: Redis error
+[2026-07-17T21:21:48.578Z] ERROR: Redis error
+[2026-07-17T21:21:49.081Z] ERROR: Redis error
+[2026-07-17T21:21:49.584Z] ERROR: Redis error
+[2026-07-17T21:21:50.088Z] ERROR: Redis error
+[2026-07-17T21:21:50.591Z] ERROR: Redis error
+[2026-07-17T21:21:51.093Z] ERROR: Redis error
+[2026-07-17T21:21:51.596Z] ERROR: Redis error
+[2026-07-17T21:21:52.099Z] ERROR: Redis error
+[2026-07-17T21:21:52.603Z] ERROR: Redis error
+[2026-07-17T21:21:53.105Z] ERROR: Redis error
+[2026-07-17T21:21:53.608Z] ERROR: Redis error
+[2026-07-17T21:21:54.111Z] ERROR: Redis error
+[2026-07-17T21:21:54.615Z] ERROR: Redis error
+[2026-07-17T21:21:55.118Z] ERROR: Redis error
+[2026-07-17T21:21:55.620Z] ERROR: Redis error
+[2026-07-17T21:21:56.122Z] ERROR: Redis error
+[2026-07-17T21:21:56.624Z] ERROR: Redis error
+[2026-07-17T21:21:57.128Z] ERROR: Redis error
+[2026-07-17T21:21:57.653Z] ERROR: Redis error
+[2026-07-17T21:21:58.156Z] ERROR: Redis error
+[2026-07-17T21:21:58.658Z] ERROR: Redis error
+[2026-07-17T21:21:59.168Z] ERROR: Redis error
+[2026-07-17T21:21:59.673Z] ERROR: Redis error
+[2026-07-17T21:22:00.176Z] ERROR: Redis error
+[2026-07-17T21:22:00.679Z] ERROR: Redis error
+[2026-07-17T21:22:01.182Z] ERROR: Redis error
+[2026-07-17T21:22:01.684Z] ERROR: Redis error
+[2026-07-17T21:22:02.189Z] ERROR: Redis error
+[2026-07-17T21:22:02.692Z] ERROR: Redis error
+[2026-07-17T21:22:03.194Z] ERROR: Redis error
+[2026-07-17T21:22:03.697Z] ERROR: Redis error
+[2026-07-17T21:22:04.199Z] ERROR: Redis error
+[2026-07-17T21:22:04.701Z] ERROR: Redis error
+[2026-07-17T21:22:05.206Z] ERROR: Redis error
+[2026-07-17T21:22:05.710Z] ERROR: Redis error
+[2026-07-17T21:22:06.214Z] ERROR: Redis error
+[2026-07-17T21:22:06.717Z] ERROR: Redis error
+[2026-07-17T21:22:07.219Z] ERROR: Redis error
+[2026-07-17T21:22:07.723Z] ERROR: Redis error
+[2026-07-17T21:22:08.226Z] ERROR: Redis error
+[2026-07-17T21:22:08.728Z] ERROR: Redis error
+[2026-07-17T21:22:14.122Z] ERROR: Redis error connect ECONNREFUSED 127.0.0.1:6379
+[2026-07-17T21:22:14.124Z] ERROR: Redis error connect ECONNREFUSED 127.0.0.1:6379
+[2026-07-17T21:22:14.176Z] ERROR: Redis error connect ECONNREFUSED 127.0.0.1:6379
+[2026-07-17T21:22:14.278Z] ERROR: Redis error connect ECONNREFUSED 127.0.0.1:6379
+[2026-07-17T21:22:14.431Z] ERROR: Redis error connect ECONNREFUSED 127.0.0.1:6379
+[2026-07-17T21:22:14.634Z] ERROR: Redis error connect ECONNREFUSED 127.0.0.1:6379
+[2026-07-17T21:22:14.887Z] ERROR: Redis error connect ECONNREFUSED 127.0.0.1:6379
+[2026-07-17T21:22:15.190Z] ERROR: Redis error connect ECONNREFUSED 127.0.0.1:6379
+[2026-07-17T21:22:15.543Z] ERROR: Redis error connect ECONNREFUSED 127.0.0.1:6379
+[2026-07-17T21:22:15.946Z] ERROR: Redis error connect ECONNREFUSED 127.0.0.1:6379
+[2026-07-17T21:22:16.399Z] ERROR: Redis error connect ECONNREFUSED 127.0.0.1:6379
+[2026-07-17T21:22:16.901Z] ERROR: Redis error connect ECONNREFUSED 127.0.0.1:6379
+[2026-07-17T21:22:17.403Z] ERROR: Redis error connect ECONNREFUSED 127.0.0.1:6379
+[2026-07-17T21:22:17.906Z] ERROR: Redis error connect ECONNREFUSED 127.0.0.1:6379
+[2026-07-18T19:02:12.858Z] ERROR: Failed to start server Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-07-18T19:03:52.580Z] ERROR: Failed to start server Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
