@@ -86,10 +86,9 @@ const userSchema = new mongoose.Schema(
 );
 
 // Only hash if a password was actually set (admin/staff accounts)
-userSchema.pre('save', async function hashPassword(next) {
-  if (!this.isModified('password') || !this.password) return next();
+userSchema.pre('save', async function hashPassword() {
+  if (!this.isModified('password') || !this.password) return;
   this.password = await bcrypt.hash(this.password, 12);
-  next();
 });
 
 userSchema.methods.comparePassword = function comparePassword(candidate) {

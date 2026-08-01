@@ -16,12 +16,18 @@ const reportRoutes = require('./routes/reportRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const giftRoutes = require('./routes/giftRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
 // Keep your existing wallet/match routes mounted exactly as before:
 const walletRoutes = require('./routes/walletRoutes');
 const matchRoutes = require('./routes/matchRoutes');
-const notificationRoutes = require("./routes/notificationRoutes");
 
 const app = express();
+
+// Render (and most PaaS hosts) put the app behind a reverse proxy, so
+// Express needs to trust the X-Forwarded-For header to get the real client
+// IP — without this, express-rate-limit logs a misconfiguration warning and
+// could rate-limit by the proxy's IP instead of the actual user's.
+app.set('trust proxy', 1);
 
 app.use((req, res, next) => {
   console.log("REQUEST:", req.method, req.url);
@@ -60,9 +66,10 @@ app.use('/api/reports', reportRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/gifts', giftRoutes);
+app.use('/api/notifications', notificationRoutes);
 app.use('/api/wallet', walletRoutes);
 app.use('/api/match', matchRoutes);
-app.use("/api/notifications", notificationRoutes);
+
 app.use((req, res) => res.status(404).json({ success: false, message: 'Route not found' }));
 app.use(errorHandler);
 
