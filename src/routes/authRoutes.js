@@ -12,6 +12,9 @@ router.post('/verify-otp', authLimiter, authController.verifyOtp);
 // --- Password-based login (admins/staff only — accounts with a password set) ---
 router.post('/login', authLimiter, authController.login);
 
+router.post('/google', authController.socialLogin);
+router.post('/apple', authController.socialLogin);
+
 router.post('/refresh', authController.refresh);
 router.post('/logout', protect, authController.logout);
 router.post(

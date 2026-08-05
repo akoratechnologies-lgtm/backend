@@ -25,7 +25,76 @@ exports.getMe = async (req, res, next) => {
   try {
     const user = req.user.toObject ? req.user.toObject() : req.user;
     user.profileCompletion = calcProfileCompletion(req.user);
+    user.followersCount = (user.followers || []).length;
+    user.followingCount = (user.following || []).length;
     res.json({ success: true, user });
+  } catch (err) {
+    next(err);
+  }
+};
+
+// GET /api/users/search?q=someusername   (protected)
+// Instagram-style: search by exact/partial username (the permanent, unique
+// handle) so a user can find one specific person out of the whole user base.
+exports.searchUsers = async (req, res, next) => {
+  try {
+    const q = (req.query.q || '').trim();
+    if (!q) return res.json({ success: true, users: [] });
+
+    const users = await User.find({
+      _id: { $ne: req.user._id },
+      username: { $regex: q, $options: 'i' },
+      isBanned: false,
+    })
+      .select('fullName username profilePhoto country isOnline followers')
+      .limit(20);
+
+    res.json({
+      success: true,
+      users: users.map((u) => ({
+        id: u._id,
+        name: u.fullName || u.username,
+        username: u.username,
+        avatar: u.profilePhoto || '',
+        country: u.country || '',
+        isOnline: !!u.isOnline,
+        isFollowing: (u.followers || []).some((f) => String(f) === String(req.user._id)),
+      })),
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+// GET /api/users/:id   (protected) — public profile view (for search results,
+// video-call partner card, followers/following lists, etc.)
+exports.getPublicProfile = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.params.id).select(
+      'fullName username profilePhoto photos bio interests country state gender dateOfBirth isOnline followers following privacy hideGender'
+    );
+    if (!user) return res.status(404).json({ success: false, message: 'User not found.' });
+
+    res.json({
+      success: true,
+      user: {
+        id: user._id,
+        fullName: user.fullName,
+        username: user.username,
+        profilePhoto: user.profilePhoto,
+        photos: user.photos,
+        bio: user.bio,
+        interests: user.interests,
+        country: user.country,
+        state: user.state,
+        gender: user.hideGender ? null : user.gender,
+        dateOfBirth: user.dateOfBirth,
+        isOnline: user.privacy?.hideOnlineStatus ? false : user.isOnline,
+        followersCount: (user.followers || []).length,
+        followingCount: (user.following || []).length,
+        isFollowing: (user.followers || []).some((f) => String(f) === String(req.user._id)),
+      },
+    });
   } catch (err) {
     next(err);
   }

@@ -66,6 +66,7 @@ module.exports = function initSocket(server) {
     // Lets admin broadcasts target everyone or just one country, and lets
     // billing/gift-catalog change events reach every connected client.
     socket.join('all');
+    socket.join(`user:${socket.userId}`);
     if (socket.userInfo?.country) socket.join(`country:${socket.userInfo.country}`);
 
     socket.on('queue:join', ({ voiceOnly = false } = {}) => {

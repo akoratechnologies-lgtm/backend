@@ -4,10 +4,23 @@ const bcrypt = require('bcryptjs');
 const userSchema = new mongoose.Schema(
   {
     // --- Required at OTP signup time ---
-    mobileNumber: { type: String, required: true, unique: true, trim: true, index: true , required:function () {
-      return this.role !== "admin" ;
-    } },
-    isMobileVerified: { type: Boolean, default: true }, // true because they only exist after OTP success
+    mobileNumber: {  
+   type: String,
+    default: undefined,
+   required: function () {
+  return this.role !== "admin" && this.authProvider === "phone";
+}},
+    firebaseUid: {
+  type: String,
+  unique: true,
+  sparse: true,
+},
+
+authProvider: {
+  type: String,
+  enum: ["phone", "google.com", "apple.com"],
+  default: "phone",
+},
 
     // --- Filled in later via "Complete Profile" (all optional at creation) ---
     fullName: { type: String, trim: true, maxlength: 60, default: '' },
