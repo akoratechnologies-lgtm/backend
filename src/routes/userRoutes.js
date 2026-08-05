@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { protect } = require('../middleware/auth');
 const userController = require('../controllers/userController');
-const followController = require('../controllers/followController');
+const followController = require('../controllers/Followcontroller');
 
 router.use(protect);
 router.get('/me', userController.getMe);
