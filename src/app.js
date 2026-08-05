@@ -20,7 +20,7 @@ const notificationRoutes = require('./routes/notificationRoutes');
 // Keep your existing wallet/match routes mounted exactly as before:
 const walletRoutes = require('./routes/walletRoutes');
 const matchRoutes = require('./routes/matchRoutes');
-const chatRoutes = require('./routes/chatRoutes');
+const chatRoutes = require('./routes/Chatroutes');
 
 const app = express();
 
