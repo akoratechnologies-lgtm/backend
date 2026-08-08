@@ -71,6 +71,7 @@ app.use('/api/notifications', notificationRoutes);
 app.use('/api/wallet', walletRoutes);
 app.use('/api/match', matchRoutes);
 app.use('/api/chats', chatRoutes);
+app.use('/api/follow', require('./routes/followRoutes'));
 
 app.use((req, res) => res.status(404).json({ success: false, message: 'Route not found' }));
 app.use(errorHandler);
