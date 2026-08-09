@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const { protect } = require("../middleware/auth");
-const chatController = require("../controllers/chatController");
+const chatController = require("../controllers/Chatcontroller");
 
 router.use(protect);
 
