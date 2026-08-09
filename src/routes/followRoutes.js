@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const { protect } = require("../middleware/auth");
-const followController = require("../controllers/followcontroller");
+const followController = require("../controllers/Followcontroller");
 
 router.use(protect);
 
