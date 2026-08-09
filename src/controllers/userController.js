@@ -70,31 +70,33 @@ exports.searchUsers = async (req, res, next) => {
 // video-call partner card, followers/following lists, etc.)
 exports.getPublicProfile = async (req, res, next) => {
   try {
-    const user = await User.findById(req.params.id).select(
-      'fullName username profilePhoto photos bio interests country state gender dateOfBirth isOnline followers following privacy hideGender'
-    );
+const user = await User.findById(req.params.id).select(
+  'fullName username profilePhoto photos bio interests languages country state gender dateOfBirth isOnline followers following privacy hideGender'
+);
     if (!user) return res.status(404).json({ success: false, message: 'User not found.' });
 
-    res.json({
-      success: true,
-      user: {
-        id: user._id,
-        fullName: user.fullName,
-        username: user.username,
-        profilePhoto: user.profilePhoto,
-        photos: user.photos,
-        bio: user.bio,
-        interests: user.interests,
-        country: user.country,
-        state: user.state,
-        gender: user.hideGender ? null : user.gender,
-        dateOfBirth: user.dateOfBirth,
-        isOnline: user.privacy?.hideOnlineStatus ? false : user.isOnline,
-        followersCount: (user.followers || []).length,
-        followingCount: (user.following || []).length,
-        isFollowing: (user.followers || []).some((f) => String(f) === String(req.user._id)),
-      },
-    });
+res.json({
+  success: true,
+  user: {
+    id: user._id,
+    name: user.fullName || user.username || 'AKORA user',
+    username: user.username,
+    age: calcAge(user.dateOfBirth),
+    gender: user.hideGender ? null : user.gender,
+    country: user.country || '',
+    avatar: user.profilePhoto || '',
+    photos: user.photos || [],
+    bio: user.bio || '',
+    interests: user.interests || [],
+    languages: user.languages || [],
+    isOnline: user.privacy?.hideOnlineStatus ? false : user.isOnline,
+    lastSeen: user.privacy?.hideLastSeen ? null : user.lastSeen,
+    followerCount: (user.followers || []).length,
+    followingCount: (user.following || []).length,
+    isFollowedByMe: (user.followers || []).some((f) => String(f) === String(req.user._id)),
+    canMessage: user.privacy?.whoCanMessage !== 'nobody',
+  },
+});
   } catch (err) {
     next(err);
   }
@@ -291,6 +293,57 @@ exports.deletePhoto = async (req, res, next) => {
     res.json({ success: true, user: obj });
   } catch (err) {
     next(err);
+  }
+};
+
+exports.updateProfilePhoto = async (req, res, next) => {
+  try {
+    const { profilePhoto } = req.body;
+
+    if (!profilePhoto) {
+      return res.status(400).json({
+        success: false,
+        message: "Profile photo URL is required",
+      });
+    }
+
+    if (
+      !profilePhoto.startsWith(
+        "https://res.cloudinary.com/"
+      )
+    ) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid Cloudinary image URL",
+      });
+    }
+
+    const user = await User.findByIdAndUpdate(
+      req.user._id,
+      {
+        profilePhoto,
+      },
+      {
+        new: true,
+      }
+    ).select(
+      "_id fullName username profilePhoto followers following"
+    );
+
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    res.json({
+      success: true,
+      message: "Profile photo updated",
+      user,
+    });
+  } catch (error) {
+    next(error);
   }
 };
 

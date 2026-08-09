@@ -21,6 +21,7 @@ const notificationRoutes = require('./routes/notificationRoutes');
 const walletRoutes = require('./routes/walletRoutes');
 const matchRoutes = require('./routes/matchRoutes');
 const chatRoutes = require('./routes/Chatroutes');
+const followRoutes = require('./routes/followRoutes');
 
 const app = express();
 
@@ -62,6 +63,7 @@ app.get('/', (req, res) => {
 app.get('/health', (req, res) => res.status(200).json({ status: 'ok' }));
 
 app.use('/api/auth', authRoutes);
+app.use('/api/users', followRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/reports', reportRoutes);
 app.use('/api/payments', paymentRoutes);
@@ -70,7 +72,7 @@ app.use('/api/gifts', giftRoutes);
 app.use('/api/notifications', notificationRoutes);
 app.use('/api/wallet', walletRoutes);
 app.use('/api/match', matchRoutes);
-app.use('/api/chats', chatRoutes);
+app.use('/api/chat', chatRoutes);
 app.use('/api/follow', require('./routes/followRoutes'));
 
 app.use((req, res) => res.status(404).json({ success: false, message: 'Route not found' }));

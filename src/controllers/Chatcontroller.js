@@ -44,30 +44,58 @@ exports.getConversations = async (req, res, next) => {
 // first time — safe to call repeatedly, never creates duplicates.
 exports.getOrCreateConversation = async (req, res, next) => {
   try {
-    const otherId = req.params.userId;
-    if (otherId === String(req.user._id)) {
-      return res.status(422).json({ success: false, message: "You can't message yourself." });
+    const { userId } = req.body;
+
+    if (!userId) {
+      return res.status(422).json({
+        success: false,
+        message: "userId is required",
+      });
     }
 
-    const otherUser = await User.findById(otherId).select('fullName username profilePhoto isOnline');
-    if (!otherUser) return res.status(404).json({ success: false, message: 'User not found.' });
+    const otherId = userId;
+
+    if (otherId === String(req.user._id)) {
+      return res.status(422).json({
+        success: false,
+        message: "You can't message yourself.",
+      });
+    }
+
+    const otherUser = await User.findById(otherId)
+      .select("fullName username profilePhoto isOnline");
+
+    if (!otherUser) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found.",
+      });
+    }
 
     let conversation = await Conversation.findOne({
-      participants: { $all: [req.user._id, otherId], $size: 2 },
+      participants: {
+        $all: [req.user._id, otherId],
+        $size: 2,
+      },
     });
 
     if (!conversation) {
-      conversation = await Conversation.create({ participants: [req.user._id, otherId] });
+      conversation = await Conversation.create({
+        participants: [req.user._id, otherId],
+      });
     }
 
-    res.json({
+    return res.json({
       success: true,
       conversation: {
         id: conversation._id,
         user: {
           id: otherUser._id,
-          name: otherUser.fullName || otherUser.username || 'AKORA user',
-          avatar: otherUser.profilePhoto || '',
+          name:
+            otherUser.fullName ||
+            otherUser.username ||
+            "AKORA user",
+          avatar: otherUser.profilePhoto || "",
           isOnline: !!otherUser.isOnline,
         },
       },
